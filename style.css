@@ -1,0 +1,31 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body {
+    background: rgb(255, 230, 230);
+}
+.cont-header{
+    display: flex;
+    background-color: rgb(255, 27, 84);
+    height: 100px;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 5px 10px 10px #ffacac;
+}
+header h1 {
+    font-family: 'Fugaz One', cursive;
+    color: white;
+    font-size: 3rem;
+}
+
+.main{
+    display: flex;
+    background: white;
+    width: 60vw;
+    height: 250px;
+    justify-content: center;
+    margin: 50px auto;
+    border-radius: 15px;
+}
