@@ -1,31 +1,244 @@
-*{
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
 }
 body {
-    background: rgb(255, 230, 230);
-}
-.cont-header{
-    display: flex;
-    background-color: rgb(255, 27, 84);
-    height: 100px;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 5px 10px 10px #ffacac;
-}
-header h1 {
-    font-family: 'Fugaz One', cursive;
-    color: white;
-    font-size: 3rem;
+  background-image: -moz-radial-gradient(white,#96a85670);
+  background-repeat: none;
+  height: 100vh;
 }
 
-.main{
+label {
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+}
+
+input {
+  border: 1px solid white;
+  border-radius: 15px;
+  height: 25px;
+  width: 200px;
+}
+/* indicando el tipo de input, podemos acceder a sus parametros internos y cambiar su estilo */
+input[type="text"],
+input[type="number"],
+input[type="date"] {
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  padding-left: 10px;
+  font-size: 16px;
+  color: rgb(85, 85, 85);
+}
+select {
+  border: 1px solid white;
+  border-radius: 15px;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  color: rgb(85, 85, 85);
+  height: 25px;
+  margin-bottom: 5px;
+  width: 200px;
+}
+.titulo {
+  font-family: "Poppins", sans-serif;
+  color: rgb(255, 27, 84);
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+header {
+  display: flex;
+  background-color: rgb(255, 27, 84);
+  height: 100px;
+  align-items: center;
+  justify-content: center;
+  
+}
+header h1 {
+  font-family: "Fugaz One", cursive;
+  color: white;
+  font-size: 3rem;
+}
+/* En un contenedor de tipo grid, podemos asignar las divisiones con el elemento fr, se pueden utilizar enteros o decimales para asignarlas */
+.cont-main{
+  display: flex;
+  justify-content: center;
+
+  
+}
+.main {
+  display: grid;
+  background: white;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1.5fr;
+  width: 50vw;
+  height: 300px;
+  border-radius: 30px;
+  margin: 50px;
+  filter: drop-shadow(5px 10px 4px #bdbdbd6c);
+  
+}
+.usuario {
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+  /* La propiedad border radius se puede utilizar en cada vértice, aplicandose en sentido horario */
+  border-radius: 30px 0px 0px 30px;
+  align-items: center;
+  padding: 15px;
+  background-color: rgb(243, 245, 236);
+ 
+}
+
+button {
+  font-family: "Poppins", sans-serif;
+  border: 1px solid rgb(255, 27, 84);
+  border-radius: 15px;
+  height: 25px;
+  width: 150px;
+  background-color: rgb(255, 27, 84);
+  color: white;
+  margin: 8px;
+  cursor: pointer;
+}
+.cont-saldo {
+  display: flex;
+  align-items: center;
+  margin: auto;
+}
+
+.h3-saldo {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+  color: #474747;
+}
+.saldo-restante {
+  font-family: "Poppins", sans-serif;
+  color: rgb(255, 27, 84);
+  margin-left: 10px;
+}
+.nuevo-gasto {
+  display: grid;
+  grid-template-areas: "titulo titulo" "item monto" "fecha prioridad" "boton boton";
+  grid-template-rows: 1fr 1fr 1fr 3fr;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  height: 300px;
+  /* La propiedad border radius se puede utilizar en cada vértice, aplicandose en sentido horario */
+  border-radius: 0px 30px 30px 0px;
+  padding: 15px 60px;
+  background-color: rgb(228, 239, 245);
+}
+#div-titulo {
+  display: flex;
+  justify-content: center;
+  grid-area: titulo;
+}
+#div-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  grid-area: item;
+}
+
+#div-monto {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  grid-area: monto;
+}
+
+#div-fecha {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  grid-area: fecha;
+}
+
+#div-prioridad {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  grid-area: prioridad;
+}
+#crearGasto{
     display: flex;
-    background: white;
-    width: 60vw;
-    height: 250px;
     justify-content: center;
-    margin: 50px auto;
+    margin: auto;
+    padding: auto;
+    grid-area: boton;
+    font-family: "Poppins", sans-serif;
+    font-size: 20px;
+    border: 2px solid rgb(255, 27, 84);
     border-radius: 15px;
+    height: 40px;
+    width: 200px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(255, 27, 84);
+    cursor: pointer;
+}
+.cont-tarjetas {
+  display: flex;
+  flex-direction: column;
+}
+.tarjeta{
+  display: flex;
+  flex-direction: column;
+  margin: 30px auto 30px auto;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  height: max-content;
+  width: 50vw;
+  background-color: rgb(255, 255, 255);
+  
+  border-radius: 30px;
+}
+
+.listaTarjetas{
+  list-style-type:  none;
+  font-family: "Poppins", sans-serif;
+
+}
+
+@media (max-width:800px) {
+  .main {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1.5fr;
+    width: 100vw;
+    
+    
+  }
+  .usuario {
+    display: flex;
+    flex-direction: column;
+    height: max-content;
+    align-items: center;
+    padding: 15px;
+    border-radius: 30px 30px 0px 0px;
+  }
+  .cont-saldo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+  }
+  .nuevo-gasto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: max-content;
+    padding: 15px 60px;
+    background-color: rgb(228, 239, 245);
+    border-radius: 0px 0px 30px 30px;
+  }
+  .nuevo-gasto div {
+    text-align: center;
+  }
+  
 }

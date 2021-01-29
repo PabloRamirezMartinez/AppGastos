@@ -1,30 +1,83 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 
-<head>
-    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap" rel="stylesheet">
-    <title>
-        GASTOS webApp
-    </title>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap"
+            rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;0,800;1,500&display=swap"
+            rel="stylesheet">
+        <title>
+            GASTOS webApp
+        </title>
+    </head>
 
-<body>
-    <header>
-        <div class="cont-header">
-            <h1>Gastos</h1>
-        </div>
-    </header>
-    <Section>
-        <div class="main">
-            <h2>crear nuevo gasto</h2>
-        </div>
+    <body>
+        <header>
+            <div class="cont-header">
+                <h1>Gastos</h1>
+            </div>
+        </header>
+        <Section class="cont-main">
+            <div class="main">
+                <div class="usuario">
+                    <h1 class="titulo">Datos Usuario</h1>
 
+                    <label for="nombre">Nombre</label>
+                    <input type="text" name="nombre">
+                    <label for="saldo"> Saldo Inicial</label>
 
-    </Section>
-</body>
-</head>
+                    <input id="saldo" type="number" name="saldo" step="5000">
+                    <button id="guardar"> Guardar Datos</button>
+                    <div class="cont-saldo">
+                        <h3 class="h3-saldo">Saldo actual: </h2>
+                        <h1 id="saldoRestante" class="saldo-restante">10000</h1>
+                    </div>
 
-</html>
+                </div>
+                <div class="nuevo-gasto">
+
+                    <div id="div-titulo">
+                        <h1 class="titulo">Crear nuevo Gasto</h1>
+                    </div>
+                    <div id="div-item">
+                        <label for="item">Ítem</label>
+                        <input id="item" type="text" name="item">
+                    </div>
+                    <div id="div-monto">
+                        <label for="monto">Monto</label>
+                        <input id="monto" type="number" name="monto"
+                            step="5000">
+                    </div>
+                    <div id="div-fecha">
+                        <label for="fecha">Fecha</label>
+                        <input id="fecha" type="date" name="fecha">
+                    </div>
+                    <div id="div-prioridad">
+                        <label for="prioridad">Prioridad</label>
+                        <select id="prioridad" type="text" name="prioridad">
+                            <option value="1">Baja</option>
+                            <option value="2">Media</option>
+                            <option value="3">Alta</option>
+                        </select>
+                    </div>
+                    <button id="crearGasto"> Añadir Gasto </button>
+                </div>
+                <div class="cont-tarjetas">
+                    <ul id="lista" class="listaTarjetas">
+                    </ul>
+                </div>
+               
+            </section>
+
+        </body>
+
+        <script type="text/javascript" src="./scripts/app.js"></script>
+
+    </html>
